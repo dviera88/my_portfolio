@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Viera | IT Leader & Automation Specialist</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons for icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="leading-relaxed">
+
+    <!-- Background decorative elements -->
+    <div class="absolute top-0 left-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-cyan-900/30 rounded-full filter blur-3xl opacity-50 animate-pulse-custom"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-indigo-900/30 rounded-full filter blur-3xl opacity-50 animate-pulse-custom" style="animation-delay: 4s;"></div>
+    </div>
+      
+    <div class="relative z-10">
+        <!-- Header -->
+        <header id="header" class="fixed top-0 left-0 right-0 bg-slate-900/80 backdrop-blur-sm z-50 border-b border-slate-800">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#hero" class="text-xl font-bold text-white">David Viera</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#projects" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Experience</a>
+                    <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white">
+                        <i data-lucide="menu" id="menu-open-icon"></i>
+                        <i data-lucide="x" id="menu-close-icon" class="hidden"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-slate-900">
+                <nav class="flex flex-col items-center space-y-4 py-4">
+                    <a href="#projects" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Experience</a>
+                    <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="hero" class="min-h-screen flex items-center pt-20 md:pt-0">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight"></h1>
+                    <p class="mt-4 text-xl md:text-2xl text-cyan-400 font-semibold"></p>
+                    <p class="mt-6 max-w-3xl mx-auto text-slate-300 text-lg"></p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="#contact" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                            Get In Touch
+                        </a>
+                        <a href="./david-viera-resume.pdf" download="david-viera-resume.pdf" class="w-full sm:w-auto bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12 text-center">Featured Projects & Achievements</h2>
+                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project cards will be injected here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="py-20 bg-slate-900/70">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12 text-center">Core Competencies</h2>
+                    <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Skills cards will be injected here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="py-20">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12 text-center">Professional Experience</h2>
+                    <div class="max-w-3xl mx-auto">
+                        <div id="experience-timeline" class="relative border-l-2 border-slate-700">
+                            <!-- Experience items will be injected here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="py-20 bg-slate-900/70">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12 text-center">Education & Certifications</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-6 text-center md:text-left">Education</h3>
+                            <div id="education-list" class="space-y-6">
+                                <!-- Education items will be injected here -->
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-6 text-center md:text-left">Certifications</h3>
+                            <div id="certifications-list" class="space-y-4">
+                                <!-- Certification items will be injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12 text-center">Let's Connect</h2>
+                    <p class="max-w-2xl mx-auto text-center text-slate-300 mb-12">
+                        I'm always open to discussing new projects, technological challenges, or opportunities to drive operational excellence. Feel free to reach out.
+                    </p>
+                    <div id="contact-info" class="max-w-md mx-auto">
+                        <!-- Contact info will be injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 border-t border-slate-800 py-6">
+            <div class="container mx-auto px-6 text-center text-slate-400">
+                <p>&copy; <span id="copyright-year"></span> David Viera. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="fixed bottom-6 right-6 bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0" aria-label="Go to top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
