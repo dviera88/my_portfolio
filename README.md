@@ -21,6 +21,21 @@ JavaScript (ES6+): For DOM manipulation, dynamic content rendering, and all inte
 
 Lucide Icons: For clean and lightweight SVG icons used throughout the site.
 
+🏆 Certifications & Badges
+This section highlights the key certifications I have achieved.
+
+Build a Dev Environment with Terraform and Azure - morethancertified.com
+
+AWS Certified Cloud Practitioner - Amazon Web Services
+
+n8n Certified Workflow Automation Professional - Udemy
+
+AI Automation: Build LLM Apps & Ai-Agents with n8n & API's - Udemy
+
+Introduction to Service Management with ITIL 4 - Udemy
+
+The Complete Python Bootcamp - Udemy
+
 🚀 How to View Locally
 Clone this repository to your local machine:
 
