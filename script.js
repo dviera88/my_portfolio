@@ -12,12 +12,12 @@ const portfolioData = {
   projects: [
     {
       title: "Azure VM & Network Automation with Terraform",
-      description: "Deploying a complete Azure virtual network and Linux VM using Infrastructure as Code.",
-      challenge: "Manually provisioning cloud infrastructure is time-consuming, error-prone, and difficult to replicate consistently. The goal was to automate the entire setup of a development environment on Azure to ensure speed and reliability.",
-      role: "I authored the Terraform configuration from scratch to define all necessary Azure resources, including the virtual network, subnet, security groups, public IP, and the Linux virtual machine itself. I also implemented a `local-exec` provisioner to automate local SSH configuration post-deployment.",
-      outcome: "The result is a fully automated, repeatable process for deploying a secure Azure environment in minutes. This IaC approach eliminates manual configuration errors, ensures consistency across deployments, and dramatically speeds up the process of spinning up new development environments.",
-      live_demo_url: "portfolio-showcase.html",
-      tags: ["Terraform", "Azure", "Infrastructure as Code", "Automation", "IaC"]
+      description: "Infrastructure as Code (IaC) for a consistent Azure development environment.",
+      challenge: "Manually setting up development environments in Azure was time-consuming, prone to errors, and led to inconsistent configurations. A standardized, automated solution was needed to ensure developers could get started quickly with identical setups.",
+      role: "I authored a comprehensive set of Terraform configuration files to define and provision the entire Azure infrastructure. This included the resource group, virtual network, subnet, public IP, security groups, and a Linux virtual machine, all managed through code.",
+      outcome: "The Terraform project completely automated the environment setup, reducing deployment time from hours to minutes. This resulted in greater consistency, reduced manual errors, and a more efficient workflow for the development team. The project is version-controlled, allowing for easy tracking of infrastructure changes.",
+      tags: ["Terraform", "Azure", "IaC", "Automation", "Networking"],
+      visualization: "portfolio-showcase.html" // Link to the visualization file
     },
     {
       title: "Navori Digital Menu Board Modernization",
@@ -62,12 +62,14 @@ const portfolioData = {
         { degree: "Computer Science Studies", institution: "Santa Ana College", status: "" }
     ],
     certifications: [
+        { name: "Build a Dev Environment with Terraform and Azure", issuer: "morethancertified.com" },
         { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services" },
         { name: "n8n Certified Workflow Automation Professional", issuer: "Udemy" },
         { name: "AI Automation: Build LLM Apps & Ai-Agents with n8n & API's", issuer: "Udemy" },
         { name: "Introduction to Service Management with ITIL 4", issuer: "Udemy" },
         { name: "The Complete Python Bootcamp", issuer: "Udemy" },
-    ]
+    ],
+    credly: "https://www.credly.com/users/david-viera.acf02a44/badges#credly"
   }
 };
 
@@ -87,25 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Projects
     const projectsGrid = document.getElementById('projects-grid');
     projects.forEach(project => {
+        const visualizationButton = project.visualization ?
+            `<a href="${project.visualization}" target="_blank" class="mt-4 inline-block bg-cyan-600/50 text-cyan-300 text-sm font-semibold px-4 py-2 rounded-full hover:bg-cyan-600/80 transition-colors">View Visualization</a>` : '';
+
         const projectCard = `
             <div class="card flex flex-col rounded-xl transition-all duration-300">
-                <div class="p-6 flex-grow flex flex-col">
+                <div class="p-6 flex-grow">
                     <h3 class="text-xl font-bold text-cyan-400 mb-2">${project.title}</h3>
                     <p class="text-slate-300 font-medium mb-4">${project.description}</p>
-                    <div class="space-y-3 text-sm text-slate-400 mb-4">
+                    <div class="space-y-3 text-sm text-slate-400">
                         <p><strong class="text-slate-200">Challenge:</strong> ${project.challenge}</p>
                         <p><strong class="text-slate-200">My Role:</strong> ${project.role}</p>
                         <p><strong class="text-slate-200">Outcome:</strong> ${project.outcome}</p>
                     </div>
-                    ${project.live_demo_url ? `
-                    <div class="mt-auto">
-                        <a href="${project.live_demo_url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-700 hover:bg-slate-600 text-cyan-300 font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
-                            View Visualization
-                        </a>
-                    </div>
-                    ` : ''}
+                    ${visualizationButton}
                 </div>
-                <div class="p-6 border-t border-slate-700">
+                <div class="p-6 border-t border-slate-700 mt-auto">
                     <div class="flex flex-wrap gap-2">
                         ${project.tags.map(tag => `<span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
                     </div>
@@ -183,6 +182,18 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`;
         certificationsList.innerHTML += certItem;
     });
+
+    // Add Credly Button
+    if (education.credly) {
+        const credlyLink = `
+            <div class="mt-8 text-center md:text-left">
+                <a href="${education.credly}" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                    View Verified Badges on Credly
+                </a>
+            </div>`;
+        document.querySelector('#education .grid > div:nth-child(2)').innerHTML += credlyLink;
+    }
+
 
     // Contact
     const contactInfo = document.getElementById('contact-info');
