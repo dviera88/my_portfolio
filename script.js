@@ -86,6 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     heroSection.querySelector('p:nth-of-type(1)').textContent = contact_info.title;
     heroSection.querySelector('p:nth-of-type(2)').textContent = summary;
 
+    // Remove Download Resume Button
+    const resumeButton = document.querySelector('a[href="./david-viera-resume.pdf"]');
+    if (resumeButton) {
+        resumeButton.remove();
+    }
+
     // Projects
     const projectsGrid = document.getElementById('projects-grid');
     projects.forEach(project => {
