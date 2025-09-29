@@ -11,6 +11,15 @@ const portfolioData = {
   summary: "I drive operational excellence in the QSR industry by architecting, automating, and optimizing complex Point of Sale (POS) and enterprise data systems. From large-scale cloud migrations to custom Python scripts that solve critical issues in minutes, I bridge the gap between high-level strategy and hands-on technical execution.",
   projects: [
     {
+      title: "Azure VM & Network Automation with Terraform",
+      description: "Deploying a complete Azure virtual network and Linux VM using Infrastructure as Code.",
+      challenge: "Manually provisioning cloud infrastructure is time-consuming, error-prone, and difficult to replicate consistently. The goal was to automate the entire setup of a development environment on Azure to ensure speed and reliability.",
+      role: "I authored the Terraform configuration from scratch to define all necessary Azure resources, including the virtual network, subnet, security groups, public IP, and the Linux virtual machine itself. I also implemented a `local-exec` provisioner to automate local SSH configuration post-deployment.",
+      outcome: "The result is a fully automated, repeatable process for deploying a secure Azure environment in minutes. This IaC approach eliminates manual configuration errors, ensures consistency across deployments, and dramatically speeds up the process of spinning up new development environments.",
+      live_demo_url: "portfolio-showcase.html",
+      tags: ["Terraform", "Azure", "Infrastructure as Code", "Automation", "IaC"]
+    },
+    {
       title: "Navori Digital Menu Board Modernization",
       description: "Migrating On-Premise Navori to AWS Cloud Infrastructure",
       challenge: "The critical Navori digital menu board software was running on-premise, facing limitations in scalability and resilience. The vendor primarily supported Azure, creating a significant integration hurdle for our AWS-centric infrastructure strategy.",
@@ -80,16 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
     projects.forEach(project => {
         const projectCard = `
             <div class="card flex flex-col rounded-xl transition-all duration-300">
-                <div class="p-6 flex-grow">
+                <div class="p-6 flex-grow flex flex-col">
                     <h3 class="text-xl font-bold text-cyan-400 mb-2">${project.title}</h3>
                     <p class="text-slate-300 font-medium mb-4">${project.description}</p>
-                    <div class="space-y-3 text-sm text-slate-400">
+                    <div class="space-y-3 text-sm text-slate-400 mb-4">
                         <p><strong class="text-slate-200">Challenge:</strong> ${project.challenge}</p>
                         <p><strong class="text-slate-200">My Role:</strong> ${project.role}</p>
                         <p><strong class="text-slate-200">Outcome:</strong> ${project.outcome}</p>
                     </div>
+                    ${project.live_demo_url ? `
+                    <div class="mt-auto">
+                        <a href="${project.live_demo_url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-700 hover:bg-slate-600 text-cyan-300 font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                            View Visualization
+                        </a>
+                    </div>
+                    ` : ''}
                 </div>
-                <div class="p-6 border-t border-slate-700 mt-auto">
+                <div class="p-6 border-t border-slate-700">
                     <div class="flex flex-wrap gap-2">
                         ${project.tags.map(tag => `<span class="bg-slate-700 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>`).join('')}
                     </div>
@@ -258,3 +274,4 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(section);
     });
 });
+
